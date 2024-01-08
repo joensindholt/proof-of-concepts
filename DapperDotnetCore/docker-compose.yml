@@ -1,0 +1,19 @@
+version: '3.4'
+
+services:
+  dapperdotnetcore:
+    image: ${DOCKER_REGISTRY-}dapperdotnetcore
+    build:
+      context: .
+      dockerfile: DapperDotnetCore/Dockerfile
+    depends_on:
+      - postgres
+  postgres:
+    image: postgres:13
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: dbuser
+      POSTGRES_PASSWORD: mysecretpassword

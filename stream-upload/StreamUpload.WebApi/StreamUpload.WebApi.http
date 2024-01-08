@@ -1,0 +1,6 @@
+@StreamUpload.WebApi_HostAddress = http://localhost:5115
+
+GET {{StreamUpload.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

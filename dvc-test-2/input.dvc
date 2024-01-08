@@ -1,0 +1,13 @@
+md5: 3989cba4945df687173bae6cb858a57b
+deps:
+- md5: d58dc21887d19264d061103d29df52d9.dir
+  size: 23
+  nfiles: 1
+  hash: md5
+  path: s3://sindholt-house-dvc-test-input
+outs:
+- md5: 100a9586cd976ed2f4429ac2761dda34.dir
+  size: 23
+  nfiles: 1
+  hash: md5
+  path: input

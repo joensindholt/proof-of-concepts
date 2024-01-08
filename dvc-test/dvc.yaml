@@ -1,0 +1,7 @@
+stages:
+  transpose:
+    cmd: powershell cp input/input.json output/output_002.json
+    deps:
+      - input/input.json
+    outs:
+      - output/output_002.json
