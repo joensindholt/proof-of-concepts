@@ -1,0 +1,38 @@
+version: "3.8"
+services:
+  # api:
+  #   build: ./src/JaegerOpenTelemetryMonitoring.Api
+  #   ports:
+  #     - 8080:8080
+
+  jaeger:
+    image: jaegertracing/opentelemetry-all-in-one
+    environment:
+      - COLLECTOR_ZIPKIN_HOST_PORT=:9411
+    ports:
+      - 6831:6831/udp
+      - 6832:6832/udp
+      - 5778:5778
+      - 16686:16686
+      - 4317:4317
+      - 4318:4318
+      - 14250:14250
+      - 14268:14268
+      - 14269:14269
+      # - 9411:9411
+
+  zipkin:
+    image: openzipkin/zipkin
+    ports:
+      - 9411:9411
+
+  seq:
+    image: datalust/seq
+    environment:
+      - ACCEPT_EULA=Y
+      # - SEQ_FIRSTRUN_ADMINPASSWORDHASH=supersecret
+    # volumes:
+    #   - c:/tmp:/data
+    ports:
+      - 5341:5341
+      - 8081:80
